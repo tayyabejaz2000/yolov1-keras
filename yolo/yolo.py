@@ -111,6 +111,6 @@ def PreprocessLabel(
                 if lies_inside(xyxy, bounding_box[..., 0:2]):
                     label[0] = 1
                     label[1:5] = bounding_box
-                    label[classes[x]] = 1
+                    label[5 + classes[x]] = 1
             labels.append(label)
     return np.reshape(labels, (*grid, (5 + num_classes)))
